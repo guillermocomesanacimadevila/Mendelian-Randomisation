@@ -1,27 +1,27 @@
-##Install Packages
-#TwoSample MR package - documentation available at https://mrcieu.github.io/TwoSampleMR/
-install.packages("remotes") #Installing a predefined package <- "remotes"
-remotes::install_github("MRCIEU/TwoSampleMR@0.4.26") #Installing GitHub derived MR function package
+## Install Packages
+# TwoSample MR package - documentation available at https://mrcieu.github.io/TwoSampleMR/
+install.packages("remotes") # Installing a predefined package <- "remotes"
+remotes::install_github("MRCIEU/TwoSampleMR@0.4.26") # Installing GitHub derived MR function package
 
 force = TRUE #?
 
-##load packages
+## load packages
 library(TwoSampleMR)
 
 
-##set working directory
+## set working directory
 setwd("/Users/guillermocomesanacimadevila/Desktop/(MSc) HUMAN NUTRITION/GENETIC EPIDEMIOLOGY PROJECT/R DATA")
 
 #########################################################
-#set the following parameters:
-#pval<- 5e-08 
-#r2<-0.001
+# set the following parameters:
+# pval<- 5e-08 
+# r2<-0.001
 
-#In this case, we don't have to do this because we are using a pre-selected list of genetic instruments for iron status. If we didn't have this, we would have
-#to select genetic instruments ourselves on the basis of the P-value from the GWAS (<5E-08) and an r2 threshold of 0.001 to ensure that we are selecting independent genetic instruments
-#This is usually done through "clumping" - this will be explained in recommended reading. Note we skip the clumping step in this code.
+# In this case, we don't have to do this because we are using a pre-selected list of genetic instruments for iron status. If we didn't have this, we would have
+# to select genetic instruments ourselves on the basis of the P-value from the GWAS (<5E-08) and an r2 threshold of 0.001 to ensure that we are selecting independent genetic instruments
+# This is usually done through "clumping" - this will be explained in recommended reading. Note we skip the clumping step in this code.
 
-#Here we are pre-allocating the "results" data frame
+# Here we are pre-allocating the "results" data frame
 results<-data.frame(
   exposure=character(),outcome=character(),snps=numeric(),
   ivw.OR=numeric(),ivw.l=numeric(),ivw.u=numeric(),ivw.p=numeric(),
